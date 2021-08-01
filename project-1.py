@@ -13,6 +13,28 @@ import random
 
 
 def start_game():
+    print("Welcome to the Rando-Numbo!")
+    print("In this game, I will pick a number between 1 and 10, and you will try to guess the number in the least amount of guesses possible.")
+    random_num = random.randrange(1,10)
+    player_guess = int(input("I picked a number between 1 and 10. Try to guess:  "))
+
+    while player_guess != random_num:
+        if int(player_guess) < random_num:
+            print("")
+            player_guess = input("Your number was too low, try again:  ")
+        elif player_guess > random_num:
+            print("")
+            player_guess = input("Your number was too high, try again:  ")
+        elif int(player_guess) == random_num:
+            print("You got it! The number was {}!".format(random_num))
+            break
+        else:
+            player_guess()
+
+    
+          
+          
+    
     """Psuedo-code Hints
     
     When the program starts, we want to:
