@@ -16,23 +16,40 @@ def start_game():
     print("Welcome to the Rando-Numbo!")
     print("In this game, I will pick a number between 1 and 10, and you will try to guess the number in the least amount of guesses possible.")
     random_num = random.randrange(1,10)
-    player_guess = int(input("I picked a number between 1 and 10. Try to guess:  "))
-
-    while player_guess != random_num:
-        if int(player_guess) < random_num:
-            print("")
-            player_guess = input("Your number was too low, try again:  ")
-        elif player_guess > random_num:
-            print("")
-            player_guess = input("Your number was too high, try again:  ")
-        elif int(player_guess) == random_num:
-            print("You got it! The number was {}!".format(random_num))
-            break
-        else:
-            player_guess()
+    guess_amount = 0
+    play_game = True
+    try:
+        player_guess = int(input("I picked a number between 1 and 10. Try to guess:  "))
+    except ValueError:
+        print("Make sure you use an integer, not a word.")
+    
+    while play_game:
+        
+        while player_guess != random_num:
+            #high_score
+            guess_amount += 1
+            if int(player_guess) < random_num:
+                print("")
+                player_guess = input("Your number was too low, try again:  ")
+            elif int(player_guess) > random_num:
+                print("")
+                player_guess = input("Your number was too high, try again:  ")
+            elif int(player_guess) == random_num:
+                print("You got it! The number was {}!".format(random_num))
+                print("It took you {} guesses.".format(guess_amount))
+    
+                break
+                
+        keep_playing = input("Would you like to play again? (yes/no):  ")
+        if keep_playing.lower() == "yes":
+            continue
+        elif keep_playing.lower() != "yes":
+            #print("Your best score was {}.".format(high_score))
+            print("Thank you for playing!")
+        
 
     
-          
+          #currently gets stuck in while loop
           
     
     """Psuedo-code Hints
