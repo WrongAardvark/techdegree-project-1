@@ -40,12 +40,17 @@ def start_game():
                 print("You got it! The number was {}!".format(random_num))
                 print("It took you {} guesses.".format(guess_amount))
                 high_score.append(guess_amount)
+                
+                
                 keep_playing = input("Would you like to play again? (yes/no):  ")
+                
                 if keep_playing.lower() == "yes":
                     guess_amount = 0
                     break
                 elif keep_playing.lower() != "yes":
-                    print("Your best score was {}.".format(high_score))
+                    print("Your best score was {}.".format(min(high_score)))
+                    #looked up min()function for high score. found on https://computersciencehub.io/python/python-find-smallest-number-in-list/
+                    
                     print("Thank you for playing!")
                     play_game = False
                     break
