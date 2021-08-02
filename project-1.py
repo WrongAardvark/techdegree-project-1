@@ -15,16 +15,18 @@ import random
 def start_game():
     print("Welcome to the Rando-Numbo!")
     print("In this game, I will pick a number between 1 and 10, and you will try to guess the number in the least amount of guesses possible.")
-    random_num = random.randrange(1,10)
     guess_amount = 0
     play_game = True
-    try:
-        player_guess = int(input("I picked a number between 1 and 10. Try to guess:  "))
-    except ValueError:
-        print("Make sure you use an integer, not a word.")
+    high_score = []
     
     while play_game:
+        random_num = random.randrange(1,10)
         
+        try:
+            player_guess = int(input("I picked a number between 1 and 10. Try to guess:  "))
+        except ValueError:
+            print("Make sure you use an integer, not a word.")
+            
         while player_guess != random_num:
             #high_score
             guess_amount += 1
@@ -37,19 +39,24 @@ def start_game():
             elif int(player_guess) == random_num:
                 print("You got it! The number was {}!".format(random_num))
                 print("It took you {} guesses.".format(guess_amount))
+                high_score.append(guess_amount)
+                keep_playing = input("Would you like to play again? (yes/no):  ")
+                if keep_playing.lower() == "yes":
+                    guess_amount = 0
+                    break
+                elif keep_playing.lower() != "yes":
+                    print("Your best score was {}.".format(high_score))
+                    print("Thank you for playing!")
+                    play_game = False
+                    break
     
-                break
                 
-        keep_playing = input("Would you like to play again? (yes/no):  ")
-        if keep_playing.lower() == "yes":
-            continue
-        elif keep_playing.lower() != "yes":
-            #print("Your best score was {}.".format(high_score))
-            print("Thank you for playing!")
+                
+        
         
 
     
-          #currently gets stuck in while loop
+          
           
     
     """Psuedo-code Hints
