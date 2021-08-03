@@ -1,7 +1,7 @@
 # Techdegree Project 1
 """README
 
-In this guessing game, a random nuumber will be picked. Your goal is to guess that number in the least amount of guesses.
+In this guessing game, a random number will be picked. Your goal is to guess that number in the least amount of guesses.
 
 DIRECTIONS:
 
@@ -9,6 +9,7 @@ DIRECTIONS:
 2. Input the number you are guessing. (Use numbers, anything else won't add to your "guess ammount.")
 3. Keep guessing until you get the correct number.
 4. You will be asked if you'd like to play again:
+	
 	a. "yes" will take you to the beginning again.
 
 	b. "no" ends the game.
