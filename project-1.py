@@ -1,6 +1,5 @@
 import random
 
-
 def start_game():
     print("Welcome to the Rando-Numbo!")
     print("In this game, I will pick a number between 1 and 10, and you will try to guess the number in the least amount of guesses possible.")
@@ -18,21 +17,15 @@ def start_game():
             print("Make sure you use an integer, not a letter or word.")
             continue
         
-                
-                
-            
         while player_guess != random_num:
-            
-             
+         
             try:
                 int(player_guess) == False
             except ValueError:
                 print("")
                 player_guess = input("ValueError: Please use an integer:  ")
-            
-               
+              
             guess_amount += 1
-            
             
             if int(player_guess) < random_num:
                 print("")
@@ -46,7 +39,6 @@ def start_game():
                 print("You got it! The number was {}!".format(random_num))
                 print("It took you {} guesses.".format(guess_amount))
                 high_score.append(guess_amount)
-                
                 
                 keep_playing = input("Would you like to play again? (yes/no):  ")
                 
