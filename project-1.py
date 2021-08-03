@@ -1,7 +1,7 @@
 import random
 
 def start_game():
-    print("Welcome to the Rando-Numbo!")
+    print("Welcome to the Rando-Numbo game!")
     print("In this game, I will pick a number between 1 and 10, and you will try to guess the number in the least amount of guesses possible.")
     guess_amount = 0
     play_game = True
