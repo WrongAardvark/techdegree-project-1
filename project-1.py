@@ -8,7 +8,7 @@ def start_game():
     high_score = []
     
     while play_game:
-        random_num = random.randrange(1,11)
+        random_num = random.randint(1,10)
         
         try:
             player_guess = int(input("I picked a number between 1 and 10. Try to guess:  "))
@@ -24,7 +24,11 @@ def start_game():
             except ValueError:
                 print("")
                 player_guess = input("ValueError: Please use an integer:  ")
-              
+            
+            if int(player_guess) > 10:
+                print("")
+                player_guess = input("Use a number that doesn't exceed the range:  ")
+            
             guess_amount += 1
             
             if int(player_guess) < random_num:
