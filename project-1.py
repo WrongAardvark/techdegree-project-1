@@ -48,6 +48,8 @@ def start_game():
                 
                 if keep_playing.lower() == "yes":
                     guess_amount = 0
+                    print("")
+                    print("{} is your current high score. Try to beat it!".format(min(high_score)))
                     break
                 elif keep_playing.lower() != "yes":
                     print("Your lowest number of guesses was {}.".format(min(high_score)))
@@ -58,4 +60,4 @@ def start_game():
                     break
     
 # Kick off the program by calling the start_game function.
-start_game()                
+start_game()                           
